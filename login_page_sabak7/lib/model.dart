@@ -1,13 +1,12 @@
+ 
 
 
+// ignore_for_file: non_constant_identifier_names
 
 
-// ignore: unused_import
- import '../model.dart';
-
-// ignore: camel_case_types
-class student {
-   student ( {
+class Student {   
+   Student (  {
+      required this.image,
       required this.id,
       required this.name,
       required this.surName,
@@ -29,56 +28,62 @@ class student {
   int group;
   final String? gender;
   String? marriage;
+  final String image;
 
 
 }
 
-// ignore: non_constant_identifier_names
-final Daniar = student(
+
+final Daniar = Student(
     id: 1,
     name: 'Daniar',
     surName: 'Askarov', 
     age: 21,
     email:'daniar@mail', 
     group:2,
-    );
+   image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQOdW7I7GHgiGSrVK0s-bZolcvu3jRvVCZg&usqp=CAU'
+   );
+    
 
 
-// ignore: non_constant_identifier_names
-final Dinara = student(
+
+final Dinara = Student(
     id: 2,
     name: 'Dinara', 
     surName: 'Askarova',
     age: 25,
     email:'Dinara@mail', 
     group:4,
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQOdW7I7GHgiGSrVK0s-bZolcvu3jRvVCZg&usqp=CAU'
     );
 
 
-// ignore: non_constant_identifier_names
-final Hanzada = student(
+
+final Hanzada = Student(
     id: 3,
     name: 'Hanzada', 
     surName: 'Maratova', 
     age: 23,
     email:'hanzada@mail',
     group:1,
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQOdW7I7GHgiGSrVK0s-bZolcvu3jRvVCZg&usqp=CAU'
     );
 
 
-// ignore: non_constant_identifier_names
-final Mirbek = student(
+
+final Mirbek = Student(
     id: 4,
     name: 'Mirbek ', 
     surName: 'Amanov',
     age: 22,
     email:'mirbek@mail', 
     group:3,
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQOdW7I7GHgiGSrVK0s-bZolcvu3jRvVCZg&usqp=CAU'
     );
 
 
-// ignore: non_constant_identifier_names
-final Aybek = student(
+
+final Aybek = Student(
     id: 5,
     name: 'Aybek',
     surName: 'Aidarov',
@@ -86,6 +91,13 @@ final Aybek = student(
     email:'Aybek@mail', 
     group:5,
     phone: '+996500101010',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQOdW7I7GHgiGSrVK0s-bZolcvu3jRvVCZg&usqp=CAU' 
     );
 
-    
+    List studentter=<Student> [
+      Daniar,
+      Aybek,
+      Hanzada,
+      Mirbek,
+      Dinara
+    ];

@@ -1,18 +1,17 @@
 
+// ignore_for_file: non_constant_identifier_names
 
-
-// ignore_for_file: file_names
-
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' ;
 import 'package:login_page_sabak7/home/user_page.dart';
+import 'package:login_page_sabak7/model.dart';
 
-import '../model.dart';
-final studentter = <student>[
-      Daniar,
-      Dinara,
+  List studentter=<Student> [
+     Daniar,
+      Aybek,
       Hanzada,
       Mirbek,
-      Aybek];
+      Dinara
+    ];
 // ignore: camel_case_types
 class loginPage extends StatefulWidget {
   const loginPage({super.key});
@@ -28,16 +27,16 @@ class _loginPageState extends State<loginPage> {
 
    void controlNameGmail(String name, String email){
        int index = 0;
-       for(final student in studentter){
+       for(final Student in studentter){
         index++;  
-         if(name == student.name && email == student.email){
+         if(name == Student.name && email == Student.email){
           
           Navigator.
             push(context, 
           MaterialPageRoute(
-              builder: (context) =>  UserPage 
-                  (student: student.name,
-             ),
+              builder: (context) => UserPage(
+                  student:Student
+              ),
             ),
           );
         break;            
