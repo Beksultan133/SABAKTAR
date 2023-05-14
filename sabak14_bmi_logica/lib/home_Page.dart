@@ -14,6 +14,8 @@ class MyHomePage extends StatefulWidget {
 }
  class _MyHomePageState extends State<MyHomePage> {
    bool isTrue = true;
+   
+   
   @override
   Widget build(BuildContext context) {
      return  Scaffold(
@@ -68,14 +70,17 @@ class MyHomePage extends StatefulWidget {
              ),
            ),
             const SizedBox(height: 18,),
-           Expanded(
+           const Expanded(
              child: Row(
-               children: const  [
+               children: [
                StatusCart(
                  child: Height(
                   text1:AppText.height,
-                   text2: '180',
-                    text3: 'cm'
+                  
+                   text2:'180',
+                    text3: 'cm',
+                    
+                    
                  ),
                ),
                 
@@ -83,9 +88,9 @@ class MyHomePage extends StatefulWidget {
              ),
            ),
            const SizedBox(height: 18,),
-           Expanded(
+           const Expanded(
              child: Row(
-               children: const [
+               children: [
            StatusCart(
              child: WeightAge( 
                     text:AppText.weight,

@@ -21,8 +21,8 @@ class WeightAge extends StatelessWidget {
        Text(san,style: 
         AppTextStyle.santextstyle, 
     ),
-    Row(mainAxisAlignment: MainAxisAlignment.center,
-      children:const [          
+    const Row(mainAxisAlignment: MainAxisAlignment.center,
+      children:[          
     CilcularButton(icon: Icons.remove,),
        SizedBox(width: 10,) , 
     CilcularButton(icon: Icons.add,),
