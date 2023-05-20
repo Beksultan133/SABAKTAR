@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sabak_13_bmi_snippets.iml" filepath="$PROJECT_DIR$/sabak_13_bmi_snippets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/sabak_13_bmi_snippets_android.iml" filepath="$PROJECT_DIR$/android/sabak_13_bmi_snippets_android.iml" />
+    </modules>
+  </component>
+</project>
