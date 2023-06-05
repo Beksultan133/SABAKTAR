@@ -18,14 +18,14 @@ class TextStyleApp{
 
   static const bodyTextStyle = 
   TextStyle(
-            color: Colors.white,
+            color: AppColors.clouds,
                fontSize: 100,
                               );
 
    static const bishTextStyle = 
  TextStyle(
                 fontSize: 10,
-                 color: AppColors.white,
+                 color: AppColors.namecity,
                   fontWeight: FontWeight.w500);
                   
    static const cityTextStyle = 

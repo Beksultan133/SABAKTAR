@@ -1,6 +1,4 @@
-import 'dart:html';
-
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' show Dio;
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:sabak20_wether_app_add_geolocator_and_cities_list/constants/api_const.dart';
@@ -19,11 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+       title: 'Flutter Demo',
+        theme: ThemeData(
+         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true),
-      home: const MyHomePage(),
+            home: const MyHomePage(),
     );
   }
 }
@@ -53,7 +51,7 @@ Weather? weather;
  if (permission==LocationPermission.denied){
   permission = await Geolocator.requestPermission();
  }if(permission == LocationPermission.always&&permission == LocationPermission.whileInUse)
- { Position position = await Geolocator.getCurrentPosition();
+ {
   Dio dio = Dio();
   final response = await dio.get(ApiConst.address());
   if(response.statusCode == 200){
@@ -69,7 +67,8 @@ Weather? weather;
       
     });
    }else{
-    Position position = await Geolocator.getCurrentPosition();
+    // ignore: unused_local_variable
+   // Position position = await Geolocator.getCurrentPosition();
   Dio dio = Dio();
   final response = await dio.get(ApiConst.address());
   if(response.statusCode == 200){
@@ -171,7 +170,7 @@ Weather? weather;
                             ),
                              FittedBox(
                                child: Text(
-                               '${(weather!.temp -273.15).toInt()}',
+                               '${(weather!.temp -273.15).toInt()}\u00B0',
                                  style: TextStyleApp.sanTextStyle),
                              ),
                                Image.network(
@@ -182,9 +181,9 @@ Weather? weather;
                           ],
                         ),
                         const SizedBox(width: 5,),
-                          Align(
-                           alignment: Alignment.centerRight,
-                            child: FittedBox(
+                          FittedBox(
+                            child: Align(
+                             alignment: Alignment.centerRight,
                               child: Text(
                                 weather!.description.replaceAll(' ', '\n'),
                                  style: TextStyleApp.bodyTextStyle
