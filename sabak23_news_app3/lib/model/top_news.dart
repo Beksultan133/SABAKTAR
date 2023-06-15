@@ -4,20 +4,20 @@ class TopNews {
    TopNews(   
     { 
      required this.totalResults, 
-     required this.articles,
+     required this.article,
       required this.status,
       });
      
   final String status;
   final int totalResults;
-  final List <Article> articles;
+  final List <Article> article;
 
- factory TopNews.jsontop(Map<String,dynamic>json) =>
+ factory TopNews.fromJson(Map<String,dynamic>json) =>
  TopNews(
   status:json ['status'], 
   totalResults:json ['totalResults'], 
-  articles: List <Article>.from(
-    (json['articles']).map((e) => Article.jsondo(e))));
+  article: List <Article>.from(
+    (json['articles']).map((e) => Article.fromJson(e))));
 
  
 

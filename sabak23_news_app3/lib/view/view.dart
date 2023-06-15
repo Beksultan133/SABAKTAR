@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sabak23_news_app3/constants/api_const.dart';
 import 'package:sabak23_news_app3/model/top_news.dart';
 import 'package:sabak23_news_app3/services/fetch_service.dart';
+import 'package:sabak23_news_app3/them/app_text_styles.dart';
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -26,19 +27,34 @@ class HomeView extends StatefulWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xffFE5722),
     title: 
-     const Center(child: Text('news'),
-       ),
+        const Text('News Aggregator',
+      style:
+      ViewTextStyle.ffff),
+      actions:const [ Icon(Icons.more_vert,
+      color: Colors.white,
+      
+      )],
+
+      
       ),
-      body: topNews == null ? const Center(child: CircularProgressIndicator()) 
+      body: 
+      topNews == null ? const Center(child: CircularProgressIndicator())
       : ListView.builder(
-        itemCount: topNews!.articles.length,
+        itemCount: topNews!.article.length,
         itemBuilder: (context ,index){
-          final news = topNews!.articles[index];
+          final news = topNews!.article[index];
       return Card(
-        color: Colors.grey,
-        child: Row(children: [
-        Image.network(news.urlToimage??  ApiConst.newsimages),
-        Text(news.title)]
+        color: Colors.white,
+        child: Row(
+          children: [
+            Expanded(
+            flex: 3,
+              child: Image.network(news.urlToImage??  ApiConst.newsimages), ),
+               Expanded(
+              flex: 5,
+              child:  Text(news.title)),
+       
+         ]
         ),
        );
       }
