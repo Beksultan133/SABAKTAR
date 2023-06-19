@@ -33,6 +33,7 @@ class HomeView extends StatefulWidget {
       actions:const [ Icon(Icons.more_vert,
       color: Colors.white,
       
+      
       )],
 
       
@@ -43,20 +44,28 @@ class HomeView extends StatefulWidget {
         itemCount: topNews!.article.length,
         itemBuilder: (context ,index){
           final news = topNews!.article[index];
-      return Card(
-        color: Colors.white,
-        child: Row(
-          children: [
-            Expanded(
-            flex: 3,
-              child: Image.network(news.urlToImage??  ApiConst.newsimages), ),
-               Expanded(
-              flex: 5,
-              child:  Text(news.title)),
-       
-         ]
-        ),
-       );
+      return InkWell(
+        onTap: () {
+          
+        },
+        child: Card( 
+          color: Colors.white,
+          child: Row(
+            children: [
+              Expanded(
+              flex: 3,
+                child: Image.network(news.urlToImage??  ApiConst.newsimages),
+                
+                 ),
+                 const SizedBox(width: 8),
+                 Expanded(
+                flex: 5,
+                child:  Text(news.title)),
+         
+           ]
+          ),
+         ),
+      );
       }
      ),
     );
