@@ -1,4 +1,5 @@
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sabak24_news_app4/constants/api_const.dart';
 import 'package:sabak24_news_app4/model/top_news.dart';
@@ -56,7 +57,13 @@ class HomeView extends StatefulWidget {
             children: [
               Expanded(
               flex: 3,
-                child: Image.network(news.urlToImage??  ApiConst.newsimages),
+                child: 
+                CachedNetworkImage(
+        imageUrl:news.urlToImage!,
+        placeholder: (context, url) => const Center(child:  CircularProgressIndicator()),
+        errorWidget: (context, url, error) => Image.network(ApiConst.newsimages),
+     ),
+                //Image.network(news.urlToImage??  ),
                 ),
                  const SizedBox(width: 8),
                  Expanded(
