@@ -1,8 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:sabak24_news_app4/constants/api_const.dart';
 import 'package:sabak24_news_app4/model/top_news.dart';
 import 'package:sabak24_news_app4/services/fetch_service.dart';
 import 'package:sabak24_news_app4/them/app_text_styles.dart';
+
+import 'detail_view.dart';
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -32,11 +35,8 @@ class HomeView extends StatefulWidget {
       ViewTextStyle.ffff),
       actions:const [ Icon(Icons.more_vert,
       color: Colors.white,
-      
-      
-      )],
-
-      
+       )
+      ], 
       ),
       body: 
       topNews == null ? const Center(child: CircularProgressIndicator())
@@ -45,7 +45,11 @@ class HomeView extends StatefulWidget {
         itemBuilder: (context ,index){
           final news = topNews!.article[index];
       return InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context, 
+           MaterialPageRoute(builder: (context)=>  Detailview(article:news),
+           ),);
+        },
         child: Card( 
           color: Colors.white,
           child: Row(
@@ -53,12 +57,12 @@ class HomeView extends StatefulWidget {
               Expanded(
               flex: 3,
                 child: Image.network(news.urlToImage??  ApiConst.newsimages),
-                
-                 ),
+                ),
                  const SizedBox(width: 8),
                  Expanded(
                 flex: 5,
-                child:  Text(news.title)),
+                child:  Text(news.title,style:
+                 ViewTextStyle.fdStyle,)),
          
            ]
           ),
