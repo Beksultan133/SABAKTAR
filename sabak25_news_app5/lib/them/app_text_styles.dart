@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ViewTextStyle{
-  static const ffff =    TextStyle(
+  static const appBartextSty =    TextStyle(
         color: Colors.white,
         fontSize:25 ,
         fontWeight: FontWeight.w600);

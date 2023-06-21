@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
-import 'package:sabak25_news_app5/constants/api_const.dart';
+import 'package:sabak25_news_app5/components/home_news_card.dart';
+import 'package:sabak25_news_app5/model/countres_domain.dart';
 import 'package:sabak25_news_app5/model/top_news.dart';
 import 'package:sabak25_news_app5/services/fetch_service.dart';
+import 'package:sabak25_news_app5/them/app_colors.dart';
 import 'package:sabak25_news_app5/them/app_text_styles.dart';
+import 'package:sabak25_news_app5/them/text.dart';
 
-import 'detail_view.dart';
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -14,8 +16,10 @@ class HomeView extends StatefulWidget {
 }
  class _HomeViewState extends State<HomeView> {
   TopNews? topNews;
-  Future <void> fetchNews()async{
-  topNews = await TopNewsRepo().fetchTopNews();
+  Future <void> fetchNews([String? domain])async{
+   topNews = null;
+   setState(() {});
+  topNews = await TopNewsRepo().fetchTopNews(domain);
   setState(() {});
   }
   @override
@@ -28,57 +32,37 @@ class HomeView extends StatefulWidget {
   Widget build(BuildContext context) {
      return  Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xffFE5722),
-       // Colors.grey,
-    title: 
-        const Text('News Aggregator',
-      style:
-      ViewTextStyle.ffff),
-      actions:const [ Icon(Icons.more_vert,
-      color: Colors.white,
-       )
+        backgroundColor:Appcolors.appBarcolors,
+         title: 
+         const Text(Apptext.agr,
+        style:
+           ViewTextStyle.appBartextSty),
+          actions: [
+           PopupMenuButton<Country>(
+            onSelected: (Country item) async{
+            await  fetchNews(item.domain);  
+          },
+          itemBuilder: (BuildContext context) {
+          return countiesSet.map((e) =>
+           PopupMenuItem<Country>(
+            value: e, 
+             child: Text(e.name))).toList();
+         }
+        ),  
       ], 
       ),
       body: 
       topNews == null ? const Center(child: CircularProgressIndicator())
       : ListView.builder(
-        itemCount: topNews!.article.length,
+        itemCount: topNews?.article.length,
         itemBuilder: (context ,index){
           final news = topNews!.article[index];
-      return InkWell(
-        onTap: () {
-          Navigator.push(context, 
-           MaterialPageRoute(builder: (context)=>  Detailview(article:news),
-           ),
-          );
-        },
-        child: Card( 
-          color: Colors.white,
-          child: Row(
-            children: [
-              Expanded(
-              flex: 3,
-                child: 
-                /*CachedNetworkImage(
-        imageUrl:news.urlToImage!,
-        placeholder: (context, url) => const Center(child:  CircularProgressIndicator()),
-        errorWidget: (context, url, error) => Image.network(ApiConst.newsimages),
-     ),*/
-                Image.network(news.urlToImage??  ApiConst.newsimages),
-                ),
-                 const SizedBox(width: 8),
-                 Expanded(
-                flex: 5,
-                child:  Text(news.title,style:
-                 ViewTextStyle.fdStyle,),
-            ),
-           ]
-          ),
-         ),
-        );
+      return 
+        CardNews(news: news);
       }
      ),
     );
   } 
  }
+
 
