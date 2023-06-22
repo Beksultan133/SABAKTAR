@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "839325859921",
+    "project_id": "tranquility-7f5bd",
+    "storage_bucket": "tranquility-7f5bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839325859921:android:c2bb3659346769fda2f870",
+        "android_client_info": {
+          "package_name": "com.example.sabak26_capitals_ui_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839325859921-k5gljg2g1jn5m58136lccn9gvgkntlkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeP6zF3_8v2DZiSUxUiduYa1mFIeUgFyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839325859921-k5gljg2g1jn5m58136lccn9gvgkntlkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
