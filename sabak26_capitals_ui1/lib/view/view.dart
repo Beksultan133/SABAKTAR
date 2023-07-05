@@ -10,7 +10,7 @@ class MyHomePage extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
      return  Scaffold(
-      appBar: AppBar(backgroundColor: Colors.red,
+      appBar: AppBar(backgroundColor: Colors.black,
     title: const Center(
       child: Text('MyHomePage',
       style: TextStyle(fontSize: 24,
@@ -18,10 +18,9 @@ class MyHomePage extends StatefulWidget {
         ),
        ),
       ),
-      body:  Column(children: [
-        Icon(Icons.adb,size: 100,),
-          Icon(Icons.air,size: 100,),
-      ],),
+     
+       
+      
      );
   }
 }
