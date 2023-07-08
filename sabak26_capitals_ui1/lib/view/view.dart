@@ -1,26 +1,28 @@
 
 import 'package:flutter/material.dart';
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+import 'package:sabak26_capitals_ui1/constants/app_colors.dart';
+class MyHomeView extends StatefulWidget {
+  const MyHomeView({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomeView> createState() => _MyHomePageState();
 }
- class _MyHomePageState extends State<MyHomePage> {
+ class _MyHomePageState extends State<MyHomeView> {
   @override
   Widget build(BuildContext context) {
      return  Scaffold(
-      appBar: AppBar(backgroundColor: Colors.black,
-    title: const Center(
-      child: Text('MyHomePage',
-      style: TextStyle(fontSize: 24,
-      fontWeight: FontWeight.w600),
+      backgroundColor: AppColors.scaffold,
+      appBar: AppBar(backgroundColor:AppColors.grey,
+    title:   const Text('МАМЛЕКЕТТЕР БОРБОРУ'),
+    actions: [
+      IconButton(onPressed: (){}, 
+       icon:const Icon (Icons.settings,
+        color: AppColors.blue,)),
+      IconButton(onPressed: () {},
+       icon: const Icon(Icons.more_vert,color: AppColors.black,),
+          ),
+         ],
         ),
-       ),
-      ),
-     
-       
-      
-     );
-  }
+      );
+    }
 }
