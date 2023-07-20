@@ -17,6 +17,15 @@ class MyHomeView extends StatefulWidget {
     'Horth America',
     'South America',
   ];
+
+  List<String> images =[
+    'Asia',
+    'Africa',
+    'Europe',
+    'Australia',
+    'Horth America',
+    'South America',
+  ];
   @override
   Widget build(BuildContext context) {
      return  Scaffold(
@@ -55,12 +64,17 @@ class MyHomeView extends StatefulWidget {
                     decoration: BoxDecoration(
                         color:AppColors.white,
                         borderRadius: BorderRadius.circular(15)),
-                    child: Text(continents[index],
+                    child:Column(children: [
+                      Text(continents[index],
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold),),
+                      Image.asset('assets/continents')
+                    ],)
+                   
                   );
-                }),
+                }
+               ),
               ),
             ),
          ],
