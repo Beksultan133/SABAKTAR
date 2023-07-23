@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }  
 
 class _MyHomePageState extends State<MyHomePage> {
-  int index = 0;
+  int ind = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
            Container (           
           width: double.infinity,
-            decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(8)),height: 25,          
+            decoration: BoxDecoration(color: Colors.grey, 
+              borderRadius: BorderRadius.circular(8)),height: 25,          
                child: Center(
-                 child: Text("сан: $index",
+                 child: Text("сан: $ind",
                  style:  const TextStyle(fontSize: 20 ),),
                ),
             ),
@@ -64,14 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
              children: [
               ElevatedButton(onPressed: (){
                 setState(() {});
-                index--;
+                ind--;
               }, 
               child: const Icon(Icons.remove)),
               const SizedBox(width: 35,),
               ElevatedButton(onPressed: (){
                 setState(() {
                 });
-                index++;
+                ind++;
             }, 
             child: const Icon(Icons.add))
           ],
