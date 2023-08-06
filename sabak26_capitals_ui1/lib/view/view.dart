@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sabak26_capitals_ui1/constants/app_colors.dart';
 class MyHomeView extends StatefulWidget {
   const MyHomeView({super.key});
@@ -19,12 +20,12 @@ class MyHomeView extends StatefulWidget {
   ];
 
   List<String> images =[
-    'Asia',
-    'Africa',
-    'Europe',
-    'Australia',
-    'Horth America',
-    'South America',
+    '28615.svg',
+    '151642.svg',
+    '307195.svg',
+    '311014.svg',
+    '875350.svg',
+    '2239723.svg ',
   ];
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ class MyHomeView extends StatefulWidget {
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold),),
-                      Image.asset('assets/continents')
+                      SvgPicture.asset('assets/continents/$images')
                     ],)
                    
                   );
