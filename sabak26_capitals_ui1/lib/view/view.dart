@@ -55,7 +55,7 @@ class MyHomeView extends StatefulWidget {
                 child: GridView.builder(
                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
-                    //childAspectRatio: 2 / 3,
+                   // childAspectRatio: / 3,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10),
                 itemCount:continents.length,
@@ -70,7 +70,7 @@ class MyHomeView extends StatefulWidget {
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold),),
-                      SvgPicture.asset('assets/continents/$images')
+                      SvgPicture.asset('assets/continents/${images[index]}')
                     ],)
                    
                   );
