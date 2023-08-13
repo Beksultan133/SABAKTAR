@@ -19,14 +19,14 @@ class MyHomeView extends StatefulWidget {
     'South America',
   ];
 
-  List<String> images =[
+ /* List<String> images =[
     '28615.svg',
     '151642.svg',
     '307195.svg',
     '311014.svg',
     '875350.svg',
     '2239723.svg ',
-  ];
+  ];*/
   @override
   Widget build(BuildContext context) {
      return  Scaffold(
@@ -70,7 +70,7 @@ class MyHomeView extends StatefulWidget {
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold),),
-                      SvgPicture.asset('assets/continents/${images[index]}')
+                     
                     ],)
                    
                   );
